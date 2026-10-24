@@ -1,0 +1,18 @@
+[package]
+name = "media-queue-worker"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "A rate-limited Rust worker for media delivery jobs"
+
+[dependencies]
+reqwest = { version = "0.12", default-features = false, features = ["blocking", "json", "rustls-tls"] }
+serde_json = "1"
+
+[lib]
+name = "media_queue_worker"
+path = "src/lib.rs"
+
+[[bin]]
+name = "queue-worker"
+path = "src/main.rs"
